@@ -47,6 +47,11 @@ public class OpenDataServiceTest {
 		});
 	}
 	
+	@Test(expected=LanguageInvalidException.class)
+	public void you_should_search_for_data_for_not_defined_language() throws ErrorJsonProcessingException, AvailableLinkException, LanguageInvalidException {
+		openDataConsumerService.searchDataByLanguage(Optional.of("pt"));
+	}
+	
 	@Test
 	public void you_should_search_for_data_without_defining_language() throws ErrorJsonProcessingException, AvailableLinkException {
 		List<OpenDataBCN> consumeApiOpenData = openDataConsumerService.getOpenData();
