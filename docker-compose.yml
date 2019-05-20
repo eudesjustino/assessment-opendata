@@ -1,0 +1,8 @@
+wildfly:
+  build: ./wildfly
+  container_name: "wildfly"
+  ports:
+    - "8080:8080"
+    - "9990:9990"
+  volumes:
+    - "./target:/opt/jboss/wildfly/standalone/deployments"
